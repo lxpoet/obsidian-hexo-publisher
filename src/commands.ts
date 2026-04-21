@@ -86,6 +86,7 @@ function generateFrontMatterTemplate(title: string): string {
     return `---
 title: "${title}"
 date: ${new Date().toISOString().replace('T', ' ').substring(0, 19)}
+publish: false
 tags: []
 categories: []
 ---
