@@ -10,6 +10,8 @@ export class HexoPublisher extends Plugin {
     async onload() {
         await this.loadSettings();
 
+        this.addCommand(createNewPostCommand(this.app, this.settings));
+
         this.addCommand(syncCommand(this.app, this.settings));
 
         this.addSettingTab(new HexoPublisherPluginSettingTab(this.app, this));
