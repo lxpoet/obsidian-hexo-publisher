@@ -8,12 +8,17 @@ export interface HexoPublisherPluginSettings {
     hexoSourceDir: string;
 }
 
+// export const DEFAULT_SETTINGS: HexoPublisherPluginSettings = {
+//     enabledLocalRepo: false,
+//     gitRepo: '',
+//     hexoSourceDir: 'source'
+// }
 export const DEFAULT_SETTINGS: HexoPublisherPluginSettings = {
     enabledLocalRepo: false,
     gitRepo: '',
-    hexoSourceDir: 'source'
+    hexoSourceDir: 'source',
+    defaultDraftDir: ''  // 默认为空，表示根目录
 }
-
 
 export class HexoPublisherPluginSettingTab extends PluginSettingTab {
     plugin: HexoPublisher;
@@ -72,10 +77,5 @@ export interface HexoPublisherPluginSettings {
     defaultDraftDir: string;  // 新增配置项
 }
 
-export const DEFAULT_SETTINGS: HexoPublisherPluginSettings = {
-    enabledLocalRepo: false,
-    gitRepo: '',
-    hexoSourceDir: 'source',
-    defaultDraftDir: ''  // 默认为空，表示根目录
-}
+
 

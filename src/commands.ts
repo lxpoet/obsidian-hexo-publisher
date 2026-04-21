@@ -98,11 +98,13 @@ async function promptForTitle(): Promise<string | null> {
         input.type = 'text';
         input.placeholder = 'Enter post title';
         
+        const container = document.createElement('div');
+        container.appendChild(document.createTextNode('New Hexo Post Title:'));
+        container.appendChild(input);
+        
         const dialog = new Notice('', 0);
-        dialog.setMessage([
-            document.createTextNode('New Hexo Post Title:'),
-            input
-        ]);
+        // 使用类型断言解决类型不匹配问题
+        dialog.setMessage(container as any);
         
         input.focus();
         input.addEventListener('keydown', (e) => {
